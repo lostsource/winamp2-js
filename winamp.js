@@ -118,16 +118,14 @@ function Media (audioId) {
         }
         else if(balance < 0) {
             // convert to positive
-            changeVal = balance *= -1;
-            changeVal = changeVal / 100;
-
+            changeVal = balance / -100;
+            
             leftGain.gain.value = 1;
             rightGain.gain.value = 1 - changeVal;
         }
         else { // balance > 0
-            changeVal = parseInt(balance,10);
-            changeVal = changeVal / 100;
-            
+            changeVal = parseInt(balance,10) / 100;
+
             leftGain.gain.value = 1 - changeVal;
             rightGain.gain.value = 1;
         }
